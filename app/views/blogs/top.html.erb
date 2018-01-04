@@ -1,0 +1,21 @@
+<div>
+  <img src="<%= asset_path "blog_top.jpg" %>" class="image_area">
+</div>
+<ul class="row_1">
+  <li class="col-sm-12 col-md-6">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= link_to "ブログ一覧", blogs_path %></h3>
+      </div>
+      <div class="panel-body">投稿されたブログの一覧を表示します</div>
+    </div>
+  </li>
+  <li class="col-sm-12 col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= link_to '新規投稿',new_blog_path %></h3>
+      </div>
+      <div class="panel-body">新しいブログを投稿します</div>
+    </div>
+  </li>
+</ul>

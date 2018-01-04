@@ -2,7 +2,7 @@
 
 <p><%= notice %></p>
 
-<table>
+<!--<table>
   <tr>
     <th>タイトル</th>
     <th>内容</th>
@@ -11,10 +11,28 @@
   <tr>
     <td><%= blog.title %></td>
     <td><%= blog.content %></td>
-    <td><%= link_to '編集',edit_blog_path(blog.id),data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除',blog_path(blog.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
+    <td><button type="button" class="btn btn-warning"><%= link_to '編集',edit_blog_path(blog.id),data: { confirm: '本当に編集していいですか？' } %></button></td>
+    <td><button type="button" class="btn btn-danger"><%= link_to '削除',blog_path(blog.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></button></td>
   </tr>
 <% end %>
-</table>
+</table>-->
 
+<% @blogs.each do |blog| %>
+<ul class="row_1">
+  <li class="col-sm-12 col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= blog.title %></h3>
+      </div>
+      <div class="panel-body">
+        <p><%= blog.content %></p>
+        <p>
+          <button type="button" class="btn btn-warning"><%= link_to '編集',edit_blog_path(blog.id),data: { confirm: '本当に編集していいですか？' } %></button>
+          <button type="button" class="btn btn-danger"><%= link_to '削除',blog_path(blog.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></button>
+        </p>
+      </div>
+      </div>
+  </li>
+</ul>
+<% end %>
 <p><%= link_to '新規投稿',new_blog_path %></p>
