@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#has_secure_passwordメソッドを使用するためにはbcryptと言うGemが必要。
+#パスワードを適切にハッシュ化することで、たとえデータベースからパスワードが漏れてしまった場合でも、Webサイトにログインされないように。
+gem 'bcrypt', '3.1.11'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'

@@ -23,6 +23,7 @@ html {
 
 body {
   background-color:#ffffe0;
+  height:100%;
 }
   
 li{
@@ -61,5 +62,11 @@ ul{
 .blog_input tr {
   height:60px;
   width:100%;
+}
+
+.login {
+  text-align:right;
+  float:right;
+  margin:10px;
 }
 

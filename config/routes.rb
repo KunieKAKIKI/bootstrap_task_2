@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+
   root 'blogs#top'
   
   resources :blogs do
@@ -7,5 +9,8 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+  
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
   
 end
