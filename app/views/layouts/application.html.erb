@@ -18,18 +18,17 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <p class="navbar-brand">BLOG</p>
+            <a class="navbar-brand" href="/">BLOGS</a>
           </div>
           <div id="gnavi" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li><%= link_to "トップ画面", root_path %></li>
               <li><%= link_to "ブログ一覧", blogs_path %></li>
               <li><%= link_to '新規投稿',new_blog_path %></li>
             </ul>
           
             <ul class="login">
               <% if logged_in? %>
-                <li><%= link_to "ユーザ情報", user_path(current_user.id) %></li>
+                <li><%= link_to "#{current_user.name}さんのユーザ情報", user_path(current_user.id) %></li>
                 <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
               <% else %>
                 <li><%= link_to "ユーザ登録", new_user_path %></li>
@@ -39,17 +38,18 @@
           </div>
         </div>
       </nav>
-      
+    <div class="main_section">
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
   
-    <%= yield %>
-
+      <%= yield %>
+    </div>
+    
     <footer>
     　　<p>Bootstrapシリーズ課題２</p>
     　　<p>KAKIKI Kunie</p>
   　</footer>
-    
+  　
   </body>
 </html>

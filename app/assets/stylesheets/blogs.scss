@@ -13,6 +13,7 @@ footer {
   position: absolute;
   bottom: 0;
   text-align:center;
+  clear:both;
 }
 
 html {
@@ -70,3 +71,12 @@ ul{
   margin:10px;
 }
 
+.favorites {
+  margin:20px;
+}
+
+.main_section {
+  overflow: scroll;
+  height: 100vh;
+  padding-bottom:150px;
+}

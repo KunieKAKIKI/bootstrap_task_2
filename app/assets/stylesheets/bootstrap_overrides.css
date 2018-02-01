@@ -2,3 +2,8 @@
   margin-bottom:0;
 }
 
+.panel-body {
+  text-align: left;
+  word-break: keep-all;
+}
+

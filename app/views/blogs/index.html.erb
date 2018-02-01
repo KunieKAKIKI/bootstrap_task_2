@@ -22,17 +22,19 @@
   <li class="col-sm-12 col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= blog.title %></h3>
+        <h3 class="panel-title"><%= link_to "#{blog.title}",blog_path(blog.id) %></h3>
       </div>
       <div class="panel-body">
         <p><%= blog.content %></p>
         <p>
-          <button type="button" class="btn btn-warning"><%= link_to '編集',edit_blog_path(blog.id),data: { confirm: '本当に編集していいですか？' } %></button>
-          <button type="button" class="btn btn-danger"><%= link_to '削除',blog_path(blog.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></button>
+          <% if !logged_in? %>
+          <% elsif blog.user_id == current_user.id %>
+            <button type="button" class="btn btn-warning"><%= link_to '編集',edit_blog_path(blog.id),data: { confirm: '本当に編集していいですか？' } %></button>
+            <button type="button" class="btn btn-danger"><%= link_to '削除',blog_path(blog.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></button>
+          <% end %>
         </p>
       </div>
       </div>
   </li>
 </ul>
 <% end %>
-<p><%= link_to '新規投稿',new_blog_path %></p>
