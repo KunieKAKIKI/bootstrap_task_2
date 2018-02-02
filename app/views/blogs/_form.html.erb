@@ -22,6 +22,12 @@
         <th><%= form.label :content %></th>
         <td><%= form.text_area :content, :size=>"100×60" %></td>
       </tr>
+      <tr>
+        <th><%= form.label :image %></th>
+        <td><%= form.file_field :image, id: :blog_image %></td>
+        <%= form.hidden_field :image_cache %>
+      </tr>
+      
     </table>
     <div class="submit_button">
   <!--<%= form.submit %>-->

@@ -9,6 +9,11 @@ end
 #パスワードを適切にハッシュ化することで、たとえデータベースからパスワードが漏れてしまった場合でも、Webサイトにログインされないように。
 gem 'bcrypt', '3.1.11'
 
+#画像をアップロードするためのgem
+gem 'carrierwave'
+#アップロードした画像ファイルのサイズを変更するために使用するためのgem
+gem 'mini_magick'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use postgresql as the database for Active Record

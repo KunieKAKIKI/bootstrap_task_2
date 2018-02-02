@@ -24,6 +24,13 @@
 
   <%= f.label "確認用パスワード" %>
   <%= f.password_field :password_confirmation %><br>
+  
+  <%= f.label "画像" %>
+  <%= f.file_field :image, id: :user_image %>
+  <%= f.hidden_field :image_cache %>
+  
+  
+  <br>
 
   <%= f.submit "登録" %>
 <% end %>
