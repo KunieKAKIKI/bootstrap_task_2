@@ -7,12 +7,8 @@
   <p>タイトル:<%= @blog.title %></p>
   <p>内容:<%= @blog.content %></p>
   <p class=image_of_blog>画像:
-  <% if @blog.image.present? %>
-    <%= image_tag(@blog.image.url) %>
+    <%= image_tag(@blog.image) %>
     <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
-  <% else %>
-    なし
-  <% end %>
   </p>
   <%= form.submit  "投稿" %>
 <% end %>
